@@ -66,7 +66,7 @@ class _PlanetHomeState extends State<PlanetHome> {
                   child: Stack(
                     children: [
                       Hero(
-                        tag: 'judul' + _planetdatalist[index].judul,
+                        tag: 'background' + _planetdatalist[index].judul,
                         child: Container(
                           color: _planetdatalist[index].materialColor,
                         ),
@@ -76,7 +76,7 @@ class _PlanetHomeState extends State<PlanetHome> {
                         left: 0.0,
                         right: 0.0,
                         child: Hero(
-                          tag: 'gambar' + _planetdatalist[index].gambar,
+                          tag: 'gambar' + _planetdatalist[index].judul,
                           child: Image.network(_planetdatalist[index].gambar,
                               height: 80.0, fit: BoxFit.fitWidth),
                         ),
@@ -86,12 +86,15 @@ class _PlanetHomeState extends State<PlanetHome> {
                         left: 16.0,
                         child: Hero(
                           tag: 'judul' + _planetdatalist[index].judul,
-                          child: Text(
-                            _planetdatalist[index].judul,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                                fontSize: 18.0, fontWeight: FontWeight.bold),
+                          child: Material(
+                            color: Colors.transparent,
+                            child: Text(
+                              _planetdatalist[index].judul,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                  fontSize: 18.0, fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ),
@@ -99,11 +102,14 @@ class _PlanetHomeState extends State<PlanetHome> {
                         left: 16.0,
                         top: 114.0,
                         child: Hero(
-                            tag: 'desc' + _planetdatalist[index].desc,
-                            child: Text(
-                              _planetdatalist[index].desc,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
+                            tag: 'desc' + _planetdatalist[index].judul,
+                            child: Material(
+                              color: Colors.transparent,
+                              child: Text(
+                                _planetdatalist[index].desc,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                              ),
                             )),
                       ),
                     ],

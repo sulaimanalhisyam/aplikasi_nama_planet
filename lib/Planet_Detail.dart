@@ -22,10 +22,7 @@ class _PlanetDetailState extends State<PlanetDetail> {
 
   @override
   void didChangeDependencies() {
-    _screenwidth = MediaQuery
-        .of(context)
-        .size
-        .width;
+    _screenwidth = MediaQuery.of(context).size.width;
     super.didChangeDependencies();
   }
 
@@ -72,11 +69,22 @@ class _PlanetDetailState extends State<PlanetDetail> {
                       ),
                     )),
               ),
-              Hero(
-                tag: 'desc' + _planetData.judul,
-                child: Material(
-                  color: Colors.transparent,
-                  child: Text(_planetData.desc),
+              Positioned(
+                top: 270.0,
+                left: 16.0,
+                right: 20,
+                child: Hero(
+                  tag: 'desc' + _planetData.judul,
+                  child: Material(
+                    color: Colors.transparent,
+                    child: Text(_planetData.desc,
+                        maxLines: 20,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            fontSize: 17.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black)),
+                  ),
                 ),
               )
             ],

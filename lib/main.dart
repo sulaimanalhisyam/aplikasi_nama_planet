@@ -12,8 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Planbet',
       theme: ThemeData(
-        primarySwatch: Colors.black,
-        canvasColor: Colors.black45,
+        primarySwatch: Colors.blue,
       ),
       home: PlanetHome(),
     );
